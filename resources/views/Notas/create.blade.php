@@ -30,20 +30,40 @@ Cadastrar Nota Fiscal
             <div class="row">
                 <div class="col col-5">
                     <label for="idEmpresa" class="mt-2 mb-2">Empresa</label>
-                    <input type="text" class="form-control" name="idEmpresa" id="idEmpresa">
+                    <select class="form-control" name="idEmpresa" id="idEmpresa">
+                        <option selected>Selecione uma Empresa</option>
+                        @foreach ($empresas as $empresa)
+                            <option value="{{ $empresa->id }}"> {{ $empresa->nome }} </option>                           
+                        @endforeach
+                    </select>
 
                     <label for="idSecretaria" class="mt-2 mb-2">Secretaria</label>
-                    <input type="text" class="form-control" name="idSecretaria" id="idSecretaria">
+                    <select class="form-control" name="idSecretaria" id="idSecretaria">
+                        <option selected>Selecione uma Secretaria</option>
+                        @foreach ($secretarias as $secretaria)
+                            <option value=" {{ $secretaria->id }} "> {{ $secretaria->nome }} </option>
+                        @endforeach
+                    </select>
 
                     <label for="idContrato" class="mt-2 mb-2">Contrato</label>
-                    <input type="text" class="form-control" name="idContrato" id="idContrato">
+                    <select class="form-control" name="idContrato" id="idContrato">
+                        <option selected>Selecione um Contrato</option>
+                        @foreach ($contratos as $contrato)
+                            <option value=" {{ $contrato->id}} "> {{ $contrato->numContrato }} </option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col col-2">
                     <label for="idEmpenho" class="mt-2 mb-2">Empenho</label>
-                    <input type="text" class="form-control" name="idEmpenho" id="idEmpenho">
+                    <select class="form-control" name="idEmpenho" id="idEmpenho">
+                        <option selected>Selecione um Empenho</option>
+                        @foreach ($empenhos as $empenho)
+                            <option value=" {{ $empenho->id}} "> {{ $empenho->numEmpenho }}/{{ $empenho->anoEmpenho}}</option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
             

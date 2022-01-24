@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Contrato;
 use Illuminate\Http\Request;
 use App\Services\RemoverContrato;
 use App\Services\CriadorDeContratos;
 use App\Http\Requests\ContratosFormRequest;
-use App\Models\Empresa;
-use App\Models\Secretaria;
+use App\Models\{Empresa, Secretaria,Contrato};
 
 class ContratosController extends Controller
 {
@@ -54,13 +52,5 @@ class ContratosController extends Controller
         $request->session()->flash('mensagem', "O Contrato $numContrato foi removido com sucesso!");
 
         return redirect()->route('listar_contratos');
-    }
-
-    public function listarEmpresas (Request $request)
-    {
-        $empresas = Empresa::query()->orderBy('numContrato')->get();
-        $request = $empresas;
-
-        return $request;
     }
 }

@@ -24,6 +24,7 @@ Cadastrar Empenhos
                 <input type="date" class="form-control" name="emissao" id="emissao">
 
                 <label for="saldo" class="mb-2 mt-2">Saldo Total do Empenho <font color="red">*</font></label>
+                <input type="saldo" class="form-control" name="saldo" id="saldo" placeholder="R$ 123,45">
             </div>
 
             <div>
@@ -49,7 +50,7 @@ Cadastrar Empenhos
 
                 <div class="col col-6">
                     <label for="idContrato" class="mb-2 mt-2">Contrato<font color="red">*</font></label>
-                    <select name="idContrat" id="idContrato" class="form-control">
+                    <select class="form-control" name="idContrato" id="idContrato">
                         <option selected>Selecione um Contrato</option>
                         @foreach ($contratos as $contrato)
                             <option value="{{ $contrato->id }}"> {{ $contrato->numContrato }} </option>
