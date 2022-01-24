@@ -8,6 +8,7 @@ use App\Services\RemoverContrato;
 use App\Services\CriadorDeContratos;
 use App\Http\Requests\ContratosFormRequest;
 use App\Models\Empresa;
+use App\Models\Secretaria;
 
 class ContratosController extends Controller
 {
@@ -16,12 +17,17 @@ class ContratosController extends Controller
         $contratos = Contrato::query()->orderBy('numContrato')->get();
         $mensagem = $request->session()->get('mensagem');
 
+        $empresas = Empresa::query()->orderBy('nome')->get();
+
         return view('contratos.index', compact('contratos', 'mensagem'));
     }
 
     public function create()
     {
-        return view('contratos.create');
+        $empresas = Empresa::query()->orderBy('nome')->get();
+        $secretarias = Secretaria::query()->orderBy('nome')->get();
+
+        return view('contratos.create', compact('empresas', 'secretarias'));
     }
 
     public function store (ContratosFormRequest $request, CriadorDeContratos $criadorDeContratos)

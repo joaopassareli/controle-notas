@@ -29,11 +29,9 @@ Cadastrar Contratos
                 <label for="idEmpresa" class="mb-2 mt-Life Serviços">Empresa <font color="red">*</font></label>
                 <select class="form-control" name="idEmpresa" id="idEmpresa" onclick="listarEmpresas()">
                     <option selected>Selecione uma Empresa</option>
-                    <option>ZO Análises Técnicas em Telecomunicação LTDA</option>
-                    <option>Convex Locações</option>
-                    <option>Life Serviços</option>
-                    <option>Life Tecnologia</option>
-                    {{-- Descobrir uma forma para listar as EMPRESAS cadastradas no banco neste local --}}
+                    @foreach ($empresas as $empresa)
+                        <option value="{{ $empresa->id }}"> {{$empresa->nome }} </option>
+                    @endforeach
                 </select>
             </div>
 
@@ -41,11 +39,9 @@ Cadastrar Contratos
                 <label for="idSecretaria" class="mb-2 mt-Life Serviços">Secretaria <font color="red">*</font></label>
                 <select class="form-control" name="idSecretaria" id="idSecretaria"">
                     <option selected>Selecione uma Secretaria</option>
-                    <option value="Secretaria Municipal da Fazenda">Secretaria Municipal da Fazenda</option>
-                    <option>Secretaria Municipal de Tecnologia da Informação</option>
-                    <option>Secretaria Municipal da Educação</option>
-                    <option>Secretaria Municipal da Administração</option>
-                    {{-- Descobrir uma forma para listar as SECRETARIAS cadastradas no banco neste local --}}
+                    @foreach ($secretarias as $secretaria)
+                        <option value="{{ $secretaria->id }}"> {{ $secretaria->nome}} </option>
+                    @endforeach
                 </select>
             </div>
 

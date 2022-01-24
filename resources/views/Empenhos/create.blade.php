@@ -24,23 +24,37 @@ Cadastrar Empenhos
                 <input type="date" class="form-control" name="emissao" id="emissao">
 
                 <label for="saldo" class="mb-2 mt-2">Saldo Total do Empenho <font color="red">*</font></label>
-                <input type="float" class="form-control" name="saldo" id="saldo">
             </div>
 
             <div>
                 <div class="col col-6">
                     <label for="idEmpresa" class="mb-2 mt-2">Empresa<font color="red">*</font></label>
-                    <input type="text" class="form-control" name="idEmpresa" id="idEmpresa">
+                    <select class="form-control" name="idEmpresa" id="idEmpresa">
+                        <option selected>Selecione uma Empresa</option>
+                        @foreach ($empresas as $empresa)
+                            <option value="{{ $empresa->id}}"> {{ $empresa->nome }} </option>
+                        @endforeach
+                    </select>
                 </div>
 
                 <div class="col col-6">
                     <label for="idSecretaria" class="mb-2 mt-2">Secretaria<font color="red">*</font></label>
-                    <input type="text" class="form-control" name="idSecretaria" id="idSecretaria">
+                    <select class="form-control" name="idSecretaria" id="idSecretaria">
+                        <option selected>Selecione uma Secretaria</option>
+                        @foreach ($secretarias as $secretaria)
+                            <option value="{{ $secretaria->id }}"> {{ $secretaria->nome }} </option>
+                        @endforeach
+                    </select>
                 </div>
 
                 <div class="col col-6">
                     <label for="idContrato" class="mb-2 mt-2">Contrato<font color="red">*</font></label>
-                    <input type="text" class="form-control" name="idContrato" id="idContrato">
+                    <select name="idContrat" id="idContrato" class="form-control">
+                        <option selected>Selecione um Contrato</option>
+                        @foreach ($contratos as $contrato)
+                            <option value="{{ $contrato->id }}"> {{ $contrato->numContrato }} </option>
+                        @endforeach
+                    </select>
                 </div>
                 
             </div>

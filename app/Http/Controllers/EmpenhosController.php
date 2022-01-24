@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Empenho;
+use App\Models\Empresa;
+use App\Models\Contrato;
+use App\Models\Secretaria;
 use Illuminate\Http\Request;
 use App\Services\RemoverEmpenho;
 use App\Services\CriadorDeEmpenhos;
@@ -21,7 +24,11 @@ class EmpenhosController extends Controller
 
     public function create()
     {
-        return view('empenhos.create');
+        $empresas = Empresa::query()->orderBy('nome')->get();
+        $secretarias = Secretaria::query()->orderBy('nome')->get();
+        $contratos = Contrato::all()->sortBy('numContrato');
+        
+        return view('empenhos.create', compact('empresas', 'secretarias', 'contratos'));
     }
 
     public function store(EmpenhosFormRequest $request, CriadorDeEmpenhos $criadorDeEmpenhos)
