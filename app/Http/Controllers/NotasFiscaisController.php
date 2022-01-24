@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\{Empenho, Contrato, Empresa, Secretaria};
+use App\Models\NotaFiscal;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Services\CriadorDeNotasFiscais;
 use App\Http\Requests\NotaFiscalFormRequest;
+use App\Models\{Empenho, Contrato, Empresa, Secretaria};
 
 class NotasFiscaisController extends Controller
 {
     public function index(Request $request)
     {
-        // $notasFiscais = NotaFiscal::all()->sortBy('competencia');
-        // $mensagem = $request->session()->get('mensagem');
+        $notasFiscais = NotaFiscal::all()->sortBy('competencia');
+        $mensagem = $request->session()->get('mensagem');
 
-        // return view('notas.index', compact('notasFiscais', 'mensagem'));
-        return view('notas.index');
+        return view('notas.index', compact('notasFiscais', 'mensagem'));
     }
 
     public function create ()
