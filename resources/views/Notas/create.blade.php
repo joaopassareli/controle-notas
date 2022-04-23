@@ -24,7 +24,21 @@ Cadastrar Nota Fiscal
                 <input type="text" class="form-control" name="valor" id="valor" placeholder="R$">
                 
                 <label for="competencia" class="mt-2 mb-2">Competência</label>
-                <input type="text" class="form-control" name="competencia" id="competencia" placeholder="mês/ano">
+                <select class="form-control" name="competencia" id="competencia">
+                    <option selected>Selecione</option>
+                    <option value="Janeiro">Janeiro</option>
+                    <option value="Fevereiro">Fevereiro</option>
+                    <option value="Março">Março</option>
+                    <option value="Abril">Abril</option>
+                    <option value="Maio">Maio</option>
+                    <option value="Junho">Junho</option>
+                    <option value="Julho">Julho</option>
+                    <option value="Agosto">Agosto</option>
+                    <option value="Setembro">Setembro</option>
+                    <option value="Outubro">Outubro</option>
+                    <option value="Novembro">Novembro</option>
+                    <option value="Dezembro">Dezembro</option>
+                </select>
             </div>
 
             <div class="row">
@@ -49,7 +63,7 @@ Cadastrar Nota Fiscal
                     <select class="form-control" name="idContrato" id="idContrato">
                         <option selected>Selecione um Contrato</option>
                         @foreach ($contratos as $contrato)
-                            <option value=" {{ $contrato->id}} "> {{ $contrato->numContrato }} </option>
+                            <option value=" {{ $contrato->id}} "> {{ $contrato->numContrato }} - {{ $contrato->objeto }}</option>
                         @endforeach
                     </select>
                 </div>

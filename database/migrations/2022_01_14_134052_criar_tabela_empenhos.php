@@ -19,7 +19,7 @@ class CriarTabelaEmpenhos extends Migration
                 $table->string('numEmpenho');
                 $table->string('anoEmpenho');
                 $table->string('emissao');
-                $table->float('saldo');
+                $table->decimal('saldo');
                 $table->string('idSecretaria');
                 $table->string('idContrato');
                 $table->string('idEmpresa');

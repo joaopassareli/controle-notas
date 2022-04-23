@@ -11,6 +11,8 @@ class NotaFiscal extends Model
     use HasFactory;
 
     public $timestamps = false;
+    protected $table = 'notas_fiscais';
+    
     protected $fillable = ['numNota', 'emissao', 'valor', 'competencia', 'idEmpresa', 'idSecretaria', 'idContrato', 'idEmpenho'];
 
     public function empresa()

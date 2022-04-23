@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\EmpenhosController;
 use App\Http\Controllers\EmpresasController;
 use App\Http\Controllers\ContratosController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MelhoriasController;
 use App\Http\Controllers\SecretariasController;
 use App\Http\Controllers\NotasFiscaisController;
@@ -22,6 +23,8 @@ use App\Http\Controllers\NotasFiscaisController;
 Route::get('login', [LoginController::class, 'index'])->name('login_index');
 Route::post('login', [LoginController::class, 'entrar']);
 
+Route::get('home', [HomeController::class, 'index'])->name('home_index');
+
 
 Route::get('empresas', [EmpresasController::class, 'index'])->name('listar_empresas');
 Route::get('empresas/criar',[EmpresasController::class, 'create'])->name('cadastrar_empresa');
@@ -33,7 +36,7 @@ Route::post('empresas/{id}/editaNome', [EmpresasController::class, 'editaNome'])
 Route::get('notas', [NotasFiscaisController::class, 'index'])->name('listar_notas');
 Route::get('notas/criar', [NotasFiscaisController::class, 'create'])->name('cadastrar_notas');
 Route::post('notas/criar', [NotasFiscaisController::class, 'store']);
-Route::delete('notas/{id}', [NotasFiscaisController::class, 'delete'])->name('remover_notas');
+Route::delete('notas/{id}', [NotasFiscaisController::class, 'destroy'])->name('remover_notas');
 
 
 Route::get('secretarias', [SecretariasController::class, 'index'])->name('listar_secretarias');

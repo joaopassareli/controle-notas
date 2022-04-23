@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CriarTabelaNotaFiscal extends Migration
+class CriarTabelaNotasFiscais extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,17 @@ class CriarTabelaNotaFiscal extends Migration
      */
     public function up()
     {
-        Schema::create('notasFiscais',
+        Schema::create('notas_fiscais',
             function(Blueprint $table){
                 $table->increments('id');
                 $table->string('numNota');
                 $table->string('emissao');
-                $table->float('valor');
+                $table->decimal('valor');
                 $table->string('competencia');
-                $table->string('idEmpenho');
-                $table->string('idContrato');
-                $table->string('idEmpresa');
-                $table->string('idSecretaria');
+                $table->integer('idEmpenho');
+                $table->integer('idContrato');
+                $table->integer('idEmpresa');
+                $table->integer('idSecretaria');
             }
         );
     }
@@ -35,6 +35,6 @@ class CriarTabelaNotaFiscal extends Migration
      */
     public function down()
     {
-        Schema::drop('notasFiscais');
+        Schema::drop('notas_fiscais');
     }
 }

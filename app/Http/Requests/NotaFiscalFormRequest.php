@@ -27,7 +27,7 @@ class NotaFiscalFormRequest extends FormRequest
             'numNota' => 'required',
             'emissao' => 'required',
             'valor' => 'required',
-            'competencia' => 'required|min:7',
+            'competencia' => 'required',
             'idEmpresa' => 'required',
             'idSecretaria' => 'required',
             'idContrato' => 'required',

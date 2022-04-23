@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\NotaFiscal;
 use Illuminate\Http\Request;
+use App\Services\RemoverNota;
 use App\Http\Controllers\Controller;
 use App\Services\CriadorDeNotasFiscais;
 use App\Http\Requests\NotaFiscalFormRequest;
@@ -13,10 +14,10 @@ class NotasFiscaisController extends Controller
 {
     public function index(Request $request)
     {
-        $notasFiscais = NotaFiscal::all()->sortBy('competencia');
+        $notas = NotaFiscal::all()->sortBy('competencia');
         $mensagem = $request->session()->get('mensagem');
 
-        return view('notas.index', compact('notasFiscais', 'mensagem'));
+        return view('notas.index', compact('notas', 'mensagem'));
     }
 
     public function create ()
@@ -49,8 +50,11 @@ class NotasFiscaisController extends Controller
         return redirect()->route('listar_notas');
     }
 
-    public function destroy()
+    public function destroy(Request $request, RemoverNota $removerNota)
     {
+        $numNota = $removerNota->removerNota($request->id);
+        $request->session()->flash('mensagem', "A Nota Fiscal nº $numNota foi removido com sucesso!");
 
+        return redirect()->route('listar_notas');
     }
 }

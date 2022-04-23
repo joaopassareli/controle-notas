@@ -12,20 +12,20 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light mb-2 d-flex justify-content-between">
         <div class="container-fluid">
-          <a class="navbar-brand" href=" {{ route('listar_empresas') }} "> Home </a> 
+          <a class="navbar-brand" href=" {{ route('home_index') }} "> Home </a> 
           <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class='nav-link active' aria-current="page" href=" {{ route('listar_empresas') }} ">Empresas</a>
                 </li>
                 <li class="nav-item">
+                    <a class='nav-link active' aria-current="page" href=" {{ route ('listar_secretarias') }} ">Secretarias</a>
+                </li>
+                <li class="nav-item">
                     <a class='nav-link active' aria-current="page" href=" {{ route('listar_contratos') }} ">Contratos</a>
                 </li>
                 <li class="nav-item">
                     <a class='nav-link active' aria-current="page" href=" {{ route('listar_empenhos') }} ">Empenhos</a>
-                </li>
-                <li class="nav-item">
-                    <a class='nav-link active' aria-current="page" href=" {{ route ('listar_secretarias') }} ">Secretarias</a>
                 </li>
                 <li class="nav-item">
                     <a class='nav-link active' aria-current="page" href=" {{ route('listar_notas') }}">Notas Fiscais</a>

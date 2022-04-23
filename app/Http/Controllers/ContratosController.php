@@ -15,8 +15,6 @@ class ContratosController extends Controller
         $contratos = Contrato::query()->orderBy('numContrato')->get();
         $mensagem = $request->session()->get('mensagem');
 
-        $empresas = Empresa::query()->orderBy('nome')->get();
-
         return view('contratos.index', compact('contratos', 'mensagem'));
     }
 

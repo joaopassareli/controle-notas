@@ -44,7 +44,7 @@
                 <div class="input-group w-50" hidden id="input-nome-contrato-{{ $contrato->id }}">
                     <input type="text" class="form-control" value="{{ $contrato->nome }}">
                     <div class="input-group-append">
-                        <button class="btn btn-primary" onclick="editarcontrato({{ $contrato->id }})">
+                        <button class="btn btn-primary" onclick="editarContrato({{ $contrato->id }})">
                             <i class="fas fa-check"></i>
                         </button>
                         @csrf

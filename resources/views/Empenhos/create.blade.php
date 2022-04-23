@@ -53,7 +53,7 @@ Cadastrar Empenhos
                     <select class="form-control" name="idContrato" id="idContrato">
                         <option selected>Selecione um Contrato</option>
                         @foreach ($contratos as $contrato)
-                            <option value="{{ $contrato->id }}"> {{ $contrato->numContrato }} </option>
+                            <option value="{{ $contrato->id }}"> {{ $contrato->numContrato }} - {{ $contrato->objeto}} </option>
                         @endforeach
                     </select>
                 </div>

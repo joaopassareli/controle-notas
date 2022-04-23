@@ -20,7 +20,7 @@ class CriarTabelaContratos extends Migration
                 $table->string('objeto');
                 $table->string('idEmpresa');
                 $table->string('idSecretaria');
-                $table->float('valor');
+                $table->decimal('valor');
                 $table->string('vencimento');
             }
         );

@@ -37,21 +37,15 @@
                     <li>Campo Empenho: Na Datalist de Empenhos desenvolver uma funcionalidade para buscar os empenhos já cadastradas no Banco.</li>
                     </font>
                 </ul><br><br>
+
+            <li><h5>Adicionar nos badges:</h5></li>
+            <ul>
+                <li>Empresa: No badge deverá mostrar quantos contratos vigentes a Prefeitura possui com esta empresa.</li>
+                <li>Secretaria: No badge deverá mostrar quantos contratos vigentes esta secretaria possui com todas as empresas cadastradas.</li>
+                <li>Contrato: No botão de link, redirecionar para uma página que apresente todos os empenhos e Notas Fiscais geradas para este contrato.</li>
+                <li>Empenho: No botão de link, redirecionar para uma página que apresente todas as Notas Fiscais geradas para este empenho.</li>
+            </ul><br><br>
         </ul>
     </div>
-
-    
-    {{-- <div class="container">
-        <label for="datalist" class="form-label">Teste Datalist</label>
-        <input type="form-control" list="datalistOptions" id="datalist">
-        <datalist id="datalistOptions">
-            <option value="Teste 1">
-            <option value="Teste 2">
-            <option value="Teste 3">
-            <option value="Abcd">
-            <option value="Abcde">   
-            <option value="abcde">
-        </datalist>
-    </div> --}}
 
 @endsection
